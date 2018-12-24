@@ -11,9 +11,6 @@ Challenge: Create a new Github project with NextJS and React that meets the foll
   - A link on that page exists to go back to the homepage
   - You do not need to persist that data in any database, just keep it in memory.
 
-##### BONUS
+##### Status (and future implementations):
 
-Feel free to add the following
-1. Add some UI/UX features
-2. Unit tests (coverage)
-3. Code linting
+1. The items above have been implemented, but unit tests still need to be added.
