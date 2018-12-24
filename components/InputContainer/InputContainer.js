@@ -1,3 +1,6 @@
+/**
+ * A simple wrapper for input components. It adds a label and some styles.
+ */
 const InputContainer = ({ label, children }) => 
   <div>
     <label>{label}</label>

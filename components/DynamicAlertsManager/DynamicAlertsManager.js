@@ -1,19 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Transition } from 'react-spring';
 
-const timeout = 2500;
-export default class DynamicAlertsManager extends React.Component {
+const TIMEOUT = 2500;
+const ALERT_TYPES = ['success', 'error']
 
-  static propTypes = {
-    showAlert: PropTypes.string
-  }
+
+/**
+ * A component that manages and displays alerts. 
+ * It that wraps other components and adds the 'addAlert' function to them as a prop.
+ */
+export default class DynamicAlertsManager extends React.Component {
 
   state = {
     alerts: []
   }
 
   addAlert = (text, type = 'success') => {
+    if (!ALERT_TYPES.includes(type))
+      throw new Error(`Invalid alert type. Values supported: ${ALERT_TYPES.join(', ')}`)
+
     const newAlert = {
       text,
       type,
@@ -28,7 +33,7 @@ export default class DynamicAlertsManager extends React.Component {
       this.setState({
         alerts: this.state.alerts.filter(a => a !== newAlert)
       })
-    }, timeout)
+    }, TIMEOUT)
   }
 
 
